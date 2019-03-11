@@ -7,6 +7,7 @@ module Contacts
       mail(
         subject: "HeluvsJ블로그에서 Contact가 도착했습니다.",
         return_path: 'no-reply@heluvsj.github.io',
+        from: 'no-reply@heluvsj.github.io',
         to: 'godluvsj@gmail.com'
       )
     end
