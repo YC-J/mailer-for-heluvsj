@@ -89,12 +89,11 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'heluvsj.github.io' }
 
   ActionMailer::Base.smtp_settings = {
-    address: 'smtp.gmail.com',
-    domain: 'gmail.com',
-    port: 587,
-    user_name: ENV['GMAIL_USER_EMAIL'],
-    password: ENV['GMAIL_PASSWORD'],
-    authentication: 'plain',
-    enable_starttls_auto: true
+    port: ENV['MAILGUN_SMTP_PORT'],
+    address: ENV['MAILGUN_SMTP_SERVER'],
+    user_name: ENV['MAILGUN_SMTP_LOGIN'],
+    password: ENV['MAILGUN_SMTP_PASSWORD'],
+    domain: 'mailer-for-heluvsj.heroku.com',
+    authentication: :plain
   }
 end
